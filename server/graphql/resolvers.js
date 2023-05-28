@@ -61,4 +61,19 @@ export const resolvers = {
       return updateTask;
     },
   },
+  //RELACIONES ENTRE TIPOS
+  //Importante si hago consulta o mutacion dentro de un objeto
+  //y que a su vez es a otro ya no va en mutacion ni query
+
+  Project: {
+    tasks: async (parent) => {
+      const tasks = await Task.find({ projectId: parent._id });
+      return tasks;
+    },
+  },
+  Task: {
+    project: async (parent) => {
+      await Project.findById(parent.projectId);
+    },
+  },
 };
