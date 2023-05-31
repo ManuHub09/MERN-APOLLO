@@ -9,6 +9,22 @@ export const GET_PROJECTS = gql`
     }
   }
 `;
+
+export const GET_PROJECT = gql`
+  query getProject($id: ID!) {
+    project(_id: $id) {
+      _id
+      name
+      description
+      createdAt
+      tasks {
+        _id
+        title
+      }
+    }
+  }
+`;
+
 export const CREATE_PROJECTS = gql`
   mutation ($name: String, $description: String) {
     createProject(name: $name, description: $description) {

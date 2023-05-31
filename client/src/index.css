@@ -1,3 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
   background-color: aquamarine;
+}
+h1,
+h2,
+h3,
+h4,
+p {
+  color: white;
+}
+button {
+  background-color: gray;
+  color: white;
+}
+button:hover {
+  transform: scale(1.3);
 }

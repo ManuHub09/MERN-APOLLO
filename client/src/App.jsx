@@ -11,11 +11,13 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Navigate to="projects" />}></Route>
-          <Route path="/projects" element={<Projects />}></Route>
-          <Route path="/projects/:id" element={<ProjectDetail />}></Route>
-        </Routes>
+        <div className="container m-auto h-screen flex items-center justify-center">
+          <Routes>
+            <Route path="/" element={<Navigate to="projects" />}></Route>
+            <Route path="/projects" element={<Projects />}></Route>
+            <Route path="/projects/:id" element={<ProjectDetail />}></Route>
+          </Routes>
+        </div>
       </BrowserRouter>
     </ApolloProvider>
   );
